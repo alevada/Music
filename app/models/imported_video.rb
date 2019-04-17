@@ -1,0 +1,2 @@
+class ImportedVideo < ApplicationRecord
+end

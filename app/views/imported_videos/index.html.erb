@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Imported Videos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Video</th>
+      <th>Imported from</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @imported_videos.each do |imported_video| %>
+      <tr>
+        <td><%= imported_video.user_id %></td>
+        <td><%= imported_video.video_id %></td>
+        <td><%= imported_video.imported_from_id %></td>
+        <td><%= link_to 'Show', imported_video %></td>
+        <td><%= link_to 'Edit', edit_imported_video_path(imported_video) %></td>
+        <td><%= link_to 'Destroy', imported_video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Imported Video', new_imported_video_path %>
