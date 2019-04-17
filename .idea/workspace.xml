@@ -54,6 +54,9 @@
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -109,6 +112,7 @@
     <option name="width" value="900" />
     <option name="height" value="944" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -147,6 +151,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../depot/app/views/layouts/application.html.erb" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -280,17 +285,17 @@
       <workItem from="1555052086191" duration="20632000" />
       <workItem from="1555308384249" duration="19675000" />
       <workItem from="1555400715124" duration="17966000" />
-      <workItem from="1555490430577" duration="1469000" />
+      <workItem from="1555490430577" duration="1798000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71406000" />
+    <option name="totallyTimeSpent" value="71735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1980" y="-11" width="1861" height="1092" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22173193" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22173193" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -303,7 +308,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4997242" visible="true" weight="0.23194303" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4997242" visible="true" weight="0.2324159" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5002758" side_tool="true" weight="0.18921669" />
       <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.32960325" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
