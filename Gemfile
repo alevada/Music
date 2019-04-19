@@ -17,6 +17,8 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'devise'
 
 
+gem 'devise_invitable', '~> 2.0.0'
+gem 'cancancan', '~> 1.10'
 
 
 # Use Puma as the app server
