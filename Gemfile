@@ -15,6 +15,7 @@ gem 'coffee-script-source', '1.8.0'
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'devise'
+gem 'github-pages', group: :jekyll_plugins
 
 
 gem 'devise_invitable', '~> 2.0.0'
