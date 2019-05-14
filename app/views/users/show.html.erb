@@ -1,20 +1,23 @@
 
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<table class="table table-striped mt-5">
+  <tr>
+    <td> <strong>Username:</strong></td>
+    <td> <%= @user.username %></td>
+  </tr>
+  <tr>
+    <td> <strong>Email:</strong></td>
+    <td> <%= @user.email %></td>
+  </tr>
+  <tr>
+    <td> <strong>Role:</strong></td>
+    <td> <%= @user.role.name %></td>
+  </tr>
+</table>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
-<p>
-  <strong>Roles:</strong>
-  <%= @user.roles_id %>
-</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+<button type="button" class="btn btn-link"><b><%= link_to 'Edit', edit_user_path(@user) %></b></button>
+<button type="button" class="btn btn-link"><b><%= link_to 'Back', users_path %></b></button>
+

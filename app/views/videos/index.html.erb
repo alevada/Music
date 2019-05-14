@@ -1,31 +1,34 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Videos</h1>
+<head>
+  <h3 class="mb-4 mt-5">Videos</h3>
+</head>
 
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Artist</th>
-    <th>Link video</th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @videos.each do |video| %>
+<body>
+  <table class="table table-bordered">
+    <thead>
     <tr>
-      <td><%= video.name %></td>
-      <td><%= video.artist %></td>
-      <td><%= video.link_video %></td>
-      <td><%= link_to 'Show', video %></td>
-      <td><%= link_to 'Edit', edit_video_path(video) %></td>
-      <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <th>Song name</th>
+      <th>Artist name</th>
+      <th>Link video</th>
+      <th></th>
     </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+    <% @videos.each do |video| %>
+      <tr>
+        <td><%= video.name %></td>
+        <td><%= video.artist %></td>
+        <td><%= video.link_video %></td>
+        <td>
+          <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Show', video %></button>
+          <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Edit', edit_video_path(video) %></button>
+          <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Delete', video, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Video', new_video_path %>
+  <button type="button" class="btn btn-link"><b><%= link_to 'New Video', new_video_path %></b></button>
+</body>

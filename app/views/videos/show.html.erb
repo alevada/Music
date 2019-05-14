@@ -1,21 +1,19 @@
 
-<p id="notice"><%= notice %></p>
+<table class="table table-striped mt-5">
+  <tr>
+    <td> <strong>Song name:</strong></td>
+    <td> <%= @video.name %></td>
+  </tr>
+  <tr>
+    <td> <strong>Artist name:</strong></td>
+    <td> <%= @video.artist %></td>
+  </tr>
+  <tr>
+    <td> <strong>Link video:</strong></td>
+    <td> <iframe width="560" height="315" src="<%= @video.link_video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+  </tr>
+</table>
 
-<p>
-  <strong>Name:</strong>
-  <%= @video.name %>
-</p>
+<button type="button" class="btn btn-link"><b><%= link_to 'Edit', edit_video_path(@video) %></b></button>
+<button type="button" class="btn btn-link"><b><%= link_to 'Back', videos_path %></b></button>
 
-<p>
-  <strong>Artist:</strong>
-  <%= @video.artist %>
-</p>
-
-<p>
-  <strong>Link video:</strong>
-  <%= @video.link_video %>
-
-</p>
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>

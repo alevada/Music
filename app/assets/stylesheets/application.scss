@@ -14,9 +14,26 @@
  *= require_self
  */
 
+@import "bootstrap";
+@import "site";
 
-body { padding-top: 100px; }
+body { padding-top: 50px; }
 footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
 th { border-bottom: 1px solid #DDD; }
 
+
+nav.custom-nav{
+  display:inline-block;
+  width: 100%;
+  span.custom-form{
+    float:left;
+  }
+  ul{
+    float:right;
+  }
+}
+
+p.alert {
+  border-color: #007bff;
+}

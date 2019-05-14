@@ -10,11 +10,11 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true
 
-
-  enum role: {trial_user: 0, premium_user: 1, admin: 2}
+  enum role: [:trial_user, :premium_user, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
   def set_default_role
     self.role ||= Role.find_by_name 'trial_user'
   end
+
 end

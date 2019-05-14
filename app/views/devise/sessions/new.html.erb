@@ -1,6 +1,6 @@
 
 <div class="container custom-form-wrap">
-  <h2>Log in</h2>
+  <h2 class="mb-4 mt-5">Log in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -28,4 +28,4 @@
 </div>
 
 <br />
-<%= render "users/shared/links" %>
+<button type="button" class="btn btn-link"><b><%= render "devise/shared/links" %></b></button>

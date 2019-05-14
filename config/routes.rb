@@ -1,13 +1,16 @@
 
 Rails.application.routes.draw do
 
+  get 'site/index'
+
   #devise_for :users, controllers: { invitations: 'users_invitations' }
 
 
-  resources :imported_videos
+  resources :link_embed
   resources :videos
 
-  root to: 'videos#index'
+  root 'site#index'
+  #root to: 'videos#index'
 
   devise_for :users do
     post '/users/sign_out' => 'devise/sessions#destroy'

@@ -11,7 +11,6 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
-    puts "dincoace"
   end
 
   # GET /videos/new
@@ -27,6 +26,7 @@ class VideosController < ApplicationController
   # POST /videos.json
   def create
     @video = Video.new(video_params)
+    @video.link_video = link_embed(@video.link_video)
     if @video.save
       flash[:success] = 'Video added!'
       redirect_to root_url
@@ -40,11 +40,11 @@ class VideosController < ApplicationController
   def update
     respond_to do |format|
       if @video.update(video_params)
-        format.html { redirect_to @video, notice: 'Video was successfully updated.' }
-        format.json { render :show, status: :ok, location: @video }
+        format.html {redirect_to @video, notice: 'Video was successfully updated.'}
+        format.json {render :show, status: :ok, location: @video}
       else
-        format.html { render :edit }
-        format.json { render json: @video.errors, status: :unprocessable_entity }
+        format.html {render :edit}
+        format.json {render json: @video.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -52,25 +52,35 @@ class VideosController < ApplicationController
   # DELETE /videos/1
   # DELETE /videos/1.json
   def destroy
-    puts "=============================="
-    puts "aci"
-    puts "=============================="
-
     @video.destroy
     respond_to do |format|
-      format.html { redirect_to videos_url, notice: 'Video was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html {redirect_to videos_url, notice: 'Video was successfully destroyed.'}
+      format.json {head :no_content}
     end
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_video
     @video = Video.find(params[:id])
   end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def video_params
-      params.require(:video).permit(:name, :artist, :link_video)
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def video_params
+    params.require(:video).permit(:name, :artist, :link_video)
+  end
+
+  def link_embed(link_video)
+    if link_video[/youtu\.be\/([^\?]*)/]
+      youtube_id = $1
+    else
+      # Regex from # http://stackoverflow.com/questions/3452546/javascript-regex-how-to-get-youtube-video-id-from-url/4811367#4811367
+      link_video[/^.*((v\/)|(embed\/)|(watch\?))\??v?=?([^\&\?]*).*/]
+      youtube_id = $5
     end
+
+    "http://www.youtube.com/embed/#{ youtube_id }"
+  end
+
 end

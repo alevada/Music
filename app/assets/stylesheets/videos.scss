@@ -3,3 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+button.btn a{
+  display:block;
+}
+button.btn a:hover{
+  color:white;
+  background-color: #007bff;
+}
+button.btn:hover {
+  color:white;
+  text-decoration: underline;
+}
+button.btn:hover a{
+  color: white;
+}
+

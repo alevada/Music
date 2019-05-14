@@ -1,7 +1,9 @@
 
-<h1>Editing User</h1>
+<h3 class="mb-4 mt-5">Edit Video</h3>
+
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<button type="button" class="btn btn-link"><b><%= link_to 'Show', @user %></b></button>
+<button type="button" class="btn btn-link"><b><%= link_to 'Back', users_path %></b></button>
+
