@@ -6,15 +6,27 @@
 button.btn a{
   display:block;
 }
+
 button.btn a:hover{
   color:white;
   background-color: #007bff;
 }
+
 button.btn:hover {
   color:white;
   text-decoration: underline;
 }
-button.btn:hover a{
-  color: white;
+
+table {
+  &.custom-width-table{
+    max-width:600px;
+  }
+  tr{
+    td{
+      input{
+        width:100%;
+      }
+    }
+  }
 }
 

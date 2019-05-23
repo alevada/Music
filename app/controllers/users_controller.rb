@@ -5,7 +5,15 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.search(params[:search])
+    authorize! :read, User
+=begin
+  @users = if current_user.role.name == 'Administrator'
+             User.all
+           else
+             [current_user]
+           end
+=end
   end
 
   # GET /users/1
@@ -62,6 +70,13 @@ class UsersController < ApplicationController
     end
   end
 
+
+=begin
+  def deactivate
+    @user.destroy
+  end
+=end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
@@ -70,6 +85,6 @@ class UsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation, :role_id)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :role_id, :search)
   end
 end

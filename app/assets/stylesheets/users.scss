@@ -2,3 +2,17 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+table {
+  &.custom-width-table{
+    max-width:600px;
+  }
+  tr{
+    td{
+      input{
+        width:100%;
+      }
+    }
+  }
+}

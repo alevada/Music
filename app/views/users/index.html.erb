@@ -2,30 +2,36 @@
 
 <h3 class="mb-4 mt-5">Users</h3>
 
-<body>
-<table class="table table-bordered">
-  <thead>
-  <tr>
-    <th>Username</th>
-    <th>Email</th>
-    <th>Role</th>
-    <th></th>
-  </tr>
-  </thead>
+  <table class="table table-striped custom-width-table">
+    <div class="row">
+      <div class="col-md-8 col-sm-4">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th></th>
+          </tr>
+        </thead>
+      </div>
+    </div>
 
-
-  <tbody>
-  <% @users.each do |user| %>
-    <tr>
-      <td><%= user.username %></td>
-      <td><%= user.email %></td>
-      <td><%= user.role.name %></td>
-      <td>
-        <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Show', user %></button>
-        <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Edit', edit_user_path(user) %></button>
-        <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+    <div class="row">
+      <div class="col-md-8 col-sm-4">
+        <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <td><%= user.role.name %></td>
+            <td>
+              <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Show', user %></button>
+              <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Edit', edit_user_path(user) %></button>
+              <button type="button" class="btn btn-outline-primary btn-sm"> <%= link_to 'Reactivate account', @user %></button>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </div>
+    </div>
+  </table>

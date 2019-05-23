@@ -1,31 +1,31 @@
 
 <div class="container custom-form-wrap">
-  <h2 class="mb-4 mt-5">Log in</h2>
+  <h3 class="mb-4 mt-5">Log in</h3>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
-
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-striped custom-width-table">
+          <tr>
+            <td><b><%= f.label :email %></b></td>
+            <td class="width"><%= f.text_field :email, autofocus: true, autocomplete: "email" %></td>
+          </tr>
+          <tr>
+            <td><b><%= f.label :password %></b></td>
+            <td><%= f.password_field :password, autocomplete: "current-password" %></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+                <% if devise_mapping.rememberable? %>
+                  <%= f.check_box :remember_me, :class => "form-check-input"%>
+                  <b><%= f.label :remember_me, :class => "form-check-label" %></b>
+                <% end %>
+            </td>
+          </tr>
+        </table>
+        <%= f.submit 'Log in', :class => "btn btn-outline-primary btn-sm"%>
+        <button type="button" class="btn btn-link"><b><%= link_to "Forgot your password?", new_password_path(resource_name) %></b></button><br />
       </div>
-    <% end %>
-
-    <div class="actions">
-      <%= f.submit "Log in" %>
     </div>
   <% end %>
 </div>
-
-<br />
-<button type="button" class="btn btn-link"><b><%= render "devise/shared/links" %></b></button>

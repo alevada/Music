@@ -2,10 +2,18 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
+
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.all
+    #@videos = Video.all
+
+    authorize! :manage, Video
+    @videos = #if current_user.role_id == 2
+               Video.all
+             #else
+               #current_user.videos #.any? ? current_user.video : []
+             #end
   end
 
   # GET /videos/1
@@ -29,7 +37,7 @@ class VideosController < ApplicationController
     @video.link_video = link_embed(@video.link_video)
     if @video.save
       flash[:success] = 'Video added!'
-      redirect_to root_url
+      redirect_to videos_path #root_url
     else
       render :new
     end

@@ -15,26 +15,26 @@
       </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-striped custom-width-table">
+          <tr>
+            <td><b><%= f.label :name%></b></td>
+            <td><%= f.text_field :name %></td>
+          </tr>
+          <tr>
+            <td><b><%= f.label :artist %></b></td>
+            <td><%= f.text_field :artist %></td>
+          </tr>
+          <tr>
+            <td><b><%= f.label :link_video %></b></td>
+            <td><%= f.text_field :link_video %></td>
+          </tr>
+        </table>
 
-    <div class="field">
-      <%= f.label :artist %>
-      <%= f.text_field :artist %>
+        <%= f.submit :class => "btn btn-outline-primary btn-sm pull-right" %>
+      </div>
     </div>
-
-    <div class="field">
-      <%= f.label :link_video %>
-      <%= f.text_field :link_video %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-
   <% end %>
-
   </body>
 </html>

@@ -1,23 +1,24 @@
 
 
-<table class="table table-striped mt-5">
-  <tr>
-    <td> <strong>Username:</strong></td>
-    <td> <%= @user.username %></td>
-  </tr>
-  <tr>
-    <td> <strong>Email:</strong></td>
-    <td> <%= @user.email %></td>
-  </tr>
-  <tr>
-    <td> <strong>Role:</strong></td>
-    <td> <%= @user.role.name %></td>
-  </tr>
-</table>
+<div class="row">
+  <div class="col-md-8">
+    <table class="table table-striped mt-5">
+      <tr>
+        <td> <strong>Username:</strong></td>
+        <td> <%= @user.username %></td>
+      </tr>
+      <tr>
+        <td> <strong>Email:</strong></td>
+        <td> <%= @user.email %></td>
+      </tr>
+      <tr>
+        <td> <strong>Role:</strong></td>
+        <td> <%= @user.role.name %></td>
+      </tr>
+    </table>
 
+    <button type="button" class="btn btn-link"><b><%= link_to 'Edit', edit_user_path(@user) %></b></button>
+    <button type="button" class="btn btn-outline-primary btn-sm pull-right"><%= link_to 'Deactivate account', @user, method: :deactivate, data: { confirm: 'Are you sure?' } %></button>
 
-
-
-<button type="button" class="btn btn-link"><b><%= link_to 'Edit', edit_user_path(@user) %></b></button>
-<button type="button" class="btn btn-link"><b><%= link_to 'Back', users_path %></b></button>
-
+  </div>
+</div>

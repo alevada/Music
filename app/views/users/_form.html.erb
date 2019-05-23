@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
   <head></head>
@@ -16,36 +14,31 @@
         </div>
       <% end %>
 
-      <div class="field">
-        <%= f.label :username %>
-        <%= f.text_field :username %>
-      </div>
+    <table class="table table-striped mt-5 custom-width-table">
+      <tr>
+        <td><b><%= f.label :username %></b></td>
+        <td><%= f.text_field :username %></td>
+      </tr>
+      <tr>
+        <td><b><%= f.label :email %></b></td>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      <tr>
+        <td><b><%= f.label :password %></b></td>
+        <td><%= f.text_field :password %></td>
+      </tr>
+      <tr>
+        <td><b><%= f.label :password_confirmation %></b></td>
+        <td><%= f.text_field :password_confirmation %></td>
+      </tr>
+      <tr>
+        <td><b><%= f.label :role_id %></b></td>
+        <td><% options = Role.all.each.map{|role| [role.name, role.id]} %>
+          <%= f.select :role_id, options_for_select(options, :disabled => ["Select One"])%></td>
+      </tr>
+    </table>
 
-      <div class="field">
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation %>
-      </div>
-
-    <div class="field">
-      <%= f.label :role_id %><br />
-      <% options = Role.all.each.map{|role| [role.name, role.id]} %>
-      <%= f.select :role_id, options_for_select(options, :disabled => ["Select One"])%>
-    </div>
-
-      <div class="actions">
-        <%= f.submit %>
-      </div>
-    <% end %>
-
+      <%= f.submit :class => "btn btn-outline-primary btn-sm pull-right" %>
+  <% end %>
   </body>
 </html>

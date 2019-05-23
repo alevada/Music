@@ -16,8 +16,13 @@ Rails.application.routes.draw do
     post '/users/sign_out' => 'devise/sessions#destroy'
   end
 
+  resources :users do
+    post 'deactivate' => :show
+  end
+
   resources :users
   resources :invitations
+
 
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

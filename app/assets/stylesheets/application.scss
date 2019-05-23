@@ -30,10 +30,26 @@ nav.custom-nav{
     float:left;
   }
   ul{
-    float:right;
+    float:left;
   }
 }
 
 p.alert {
   border-color: #007bff;
+  margin: 0;
 }
+
+.col-sm-12{
+  float: left;
+  text-align: left;
+}
+
+.navbar-nav {
+  float: left;
+  margin-left: 0;
+}
+
+.form-control {
+  max-width: 160px;
+}
+
