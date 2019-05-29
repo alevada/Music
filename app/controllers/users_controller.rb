@@ -5,20 +5,33 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.search(params[:search])
     authorize! :read, User
-=begin
-  @users = if current_user.role.name == 'Administrator'
-             User.all
-           else
-             [current_user]
-           end
-=end
+    @users = if current_user.role.name == 'Administrator'
+               if params[:search]
+                 User.where('username LIKE ?', "%#{params[:search]}%")
+               else
+                 User.all
+               end
+             else
+               if params[:search]
+                 User.where('username LIKE ? and is_public = true', "%#{params[:search]}%")
+               else
+                 User.where('is_public = true')
+               end
+             end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+  end
+
+  def videos
+
+  end
+
+  def imported_videos
+
   end
 
   # GET /users/new
@@ -70,7 +83,6 @@ class UsersController < ApplicationController
     end
   end
 
-
 =begin
   def deactivate
     @user.destroy
@@ -85,6 +97,6 @@ class UsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation, :role_id, :search)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :role_id, :search, :is_public)
   end
 end

@@ -6,14 +6,14 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    #@videos = Video.all
 
-    authorize! :manage, Video
-    @videos = #if current_user.role_id == 2
-               Video.all
-             #else
-               #current_user.videos #.any? ? current_user.video : []
-             #end
+    @videos = Video.search(params[:searchv])
+    authorize! :read, Video
+    # @videos = if current_user.role_id == 2
+    #            Video.all
+    #          else
+    #            current_user.videos #.any? ? current_user.video : []
+    #          end
   end
 
   # GET /videos/1
@@ -76,7 +76,7 @@ class VideosController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def video_params
-    params.require(:video).permit(:name, :artist, :link_video)
+    params.require(:video).permit(:name, :artist, :link_video, :searchv)
   end
 
   def link_embed(link_video)

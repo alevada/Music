@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190517120823) do
+ActiveRecord::Schema.define(version: 20190524114611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "imported_videos", force: :cascade do |t|
+  create_table "videos_users", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "video_id"
     t.integer  "imported_from_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20190517120823) do
     t.integer  "invitations_count",      default: 0
     t.integer  "role_id"
     t.boolean  "deactivated"
+    t.boolean  "is_public"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
     t.index ["invitations_count"], name: "index_users_on_invitations_count", using: :btree

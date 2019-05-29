@@ -1,0 +1,21 @@
+
+
+  <div class="col-md-8 col-sm-12">
+    <div class="row">
+      <% if user_public? %>
+      <span class="custom-form col-md-6">
+        <%= form_tag users_path, :method => 'get' do %>
+          <%= text_field_tag :search, params[:search], placeholder: 'user name' %>
+          <%= submit_tag "Search", :username => nil, :class => "btn btn-outline-primary btn-sm" %>
+        <% end %>
+      </span>
+        <% else %>
+      <span class="custom-form col-md-6">
+        <%= form_tag videos_path, :method => 'get' do %>
+          <%= text_field_tag :search, params[:searchv], placeholder: 'artist name' %>
+          <%= submit_tag "Search", :artist => nil, :class => "btn btn-outline-primary btn-sm" %>
+        <% end %>
+      </span>
+        <% end %>
+    </div>
+  </div>
