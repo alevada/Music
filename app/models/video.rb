@@ -5,7 +5,8 @@ class Video < ApplicationRecord
   validates :artist, :presence => true
   validates :link_video, :presence => true
 
-  has_many :videos
+  belongs_to :user
+  has_many :imported_videos
 
   def self.search(search)
     if search

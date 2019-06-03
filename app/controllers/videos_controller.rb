@@ -29,11 +29,39 @@ class VideosController < ApplicationController
   # GET /videos/1/edit
   def edit
   end
+                       # metoda definita aici pt ca requestul se face la controller !
+  def import_video
+    @video = Video.find_by(id: params[:id])
+    # owner = owner-ul videoului
+    owner_user = @video.user
+    if ImportedVideo.create(video_id: @video.id, user_id: current_user.id, imported_from_id: owner_user.id)
+      redirect_to videos_path, notice: 'Imported successfully'
+    else
+      redirect_to videos_path, notice: 'Import failed'
+    end
+  end
+
+  def delete_imported_video
+    imported_video = ImportedVideo.find_by(id: params[:id])
+    unless imported_video.blank?
+      if ImportedVideo.delete(imported_video.id)
+        redirect_to my_videos_path, notice: "Deleted successfully with ID : #{imported_video.id}"
+      end
+    end
+  end
+
+  def user_videos
+    # videourile create de user
+    @owned_videos = current_user.videos
+    # videourile importate de user
+    @imported_videos = ImportedVideo.where(user_id: current_user.id)
+  end
 
   # POST /videos
   # POST /videos.json
   def create
     @video = Video.new(video_params)
+    @video.user_id = current_user.id
     @video.link_video = link_embed(@video.link_video)
     if @video.save
       flash[:success] = 'Video added!'

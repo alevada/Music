@@ -1,0 +1,62 @@
+
+<head>
+  <h6 class="mt-5">Owned videos</h6>
+</head>
+<body>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Song name</th>
+    <th>Artist name</th>
+    <th>Link video</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @owned_videos.each do |video| %>
+    <tr>
+      <td><%= video.name %></td>
+      <td><%= video.artist %></td>
+      <td><%= video.link_video %></td>
+      <td>
+        <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Show', video %></button>
+        <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Delete', video, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</body>
+
+
+<head>
+  <h6 class="mt-5">Imported videos</h6>
+</head>
+<body>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Song name</th>
+    <th>Artist name</th>
+    <th>Link video</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @imported_videos.each do |imported_video| %>
+    <tr>
+      <td><%= imported_video.video.name %></td>
+      <td><%= imported_video.video.artist %></td>
+      <td><%= imported_video.video.link_video %></td>
+      <td>
+        <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Show', imported_video.video %></button>
+        <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Delete', delete_imported_path(imported_video) , method: :delete, data: { confirm: 'Are you sure you want to delete ?' } %></button>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<br />
+<button type="button" class="btn btn-link"><b><%= link_to 'New video', new_video_path %></b></button>
+</body>
+

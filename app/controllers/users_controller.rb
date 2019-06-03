@@ -26,14 +26,6 @@ class UsersController < ApplicationController
   def show
   end
 
-  def videos
-
-  end
-
-  def imported_videos
-
-  end
-
   # GET /users/new
   def new
     @user = User.new

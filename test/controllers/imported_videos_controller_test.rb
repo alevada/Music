@@ -16,11 +16,11 @@ class ImportedVideosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create imported_video" do
-    assert_difference('UsersVideos.count') do
+    assert_difference('ImportedVideo.count') do
       post videos_users_url, params: {imported_video: {imported_from_id: @imported_video.imported_from_id, user_id: @imported_video.user_id, video_id: @imported_video.video_id } }
     end
 
-    assert_redirected_to videos_user_url(UsersVideos.last)
+    assert_redirected_to videos_user_url(ImportedVideo.last)
   end
 
   test "should show imported_video" do
@@ -39,7 +39,7 @@ class ImportedVideosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy imported_video" do
-    assert_difference('UsersVideos.count', -1) do
+    assert_difference('ImportedVideo.count', -1) do
       delete videos_user_url(@imported_video)
     end
 

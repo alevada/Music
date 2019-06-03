@@ -18,5 +18,6 @@
 <button type="button" class="btn btn-link"><b><%= link_to 'Back', videos_path %></b></button>
 
 <% unless current_user.role.name == 'Administrator' %>
-  <button type="button" class="btn btn-outline-primary btn-sm pull-right"><%= link_to 'Import video neimplem', @video, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  <button type="button" class="btn btn-outline-primary btn-sm pull-right"><%= link_to 'Import video', import_video_path(@video), method: :post %></button>
 <% end %>
+
