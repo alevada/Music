@@ -3,29 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="37a5d6b4-a0cd-46e3-b0e1-d5ea2983a8f4" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../shop/spec/models/user_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/videos_users.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/imported_videos.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/videos_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/videos_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/users_videos.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/video.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/video.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/_user.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_user.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/videos/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/videos/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos_users/_form.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos_users/_imported_video.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos_users/edit.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos_users/index.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos_users/index.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos_users/new.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos_users/show.html.erb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos_users/show.json.jbuilder" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/imported_videos_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/controllers/imported_videos_controller_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/users_videos.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../shop/.idea/shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../shop/.idea/shop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shop/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shop/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/../shop/Gemfile" afterDir="false" />
@@ -88,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/videos/user_videos.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="58" column="6" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
+            <state relative-caret-position="638">
+              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
             </state>
           </provider>
         </entry>
@@ -531,16 +508,15 @@
       <workItem from="1559196641715" duration="2918000" />
       <workItem from="1559200429501" duration="17475000" />
       <workItem from="1559284566824" duration="21191000" />
-      <workItem from="1559542241980" duration="14205000" />
+      <workItem from="1559542241980" duration="14786000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="503560000" />
+    <option name="totallyTimeSpent" value="504141000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1980" y="-11" width="1861" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19525649" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -874,8 +850,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/videos/user_videos.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="58" column="6" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
+        <state relative-caret-position="638">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
         </state>
       </provider>
     </entry>
