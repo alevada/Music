@@ -23,7 +23,7 @@
         <td>
           <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Show', video %></button>
           <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Edit', edit_video_path(video) %></button>
-          <% unless video.user == current_user || current_user.role.name == 'Administrator' %>
+          <% unless video.user == current_user || current_user.role.name == 'Administrator' || ImportedVideo.where(user_id: current_user.id, video_id: video.id).any? %>
             <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Import video', import_video_path(video), method: :post %></button>
           <% end %>
           <button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Delete', video, method: :delete, data: { confirm: 'Are you sure?' } %></button>

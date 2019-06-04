@@ -23,9 +23,11 @@
                 <li class="nav-item mb-0">
                   <b><a class="nav-link bg-light" href="/videos">Videos</a></b>
                 </li>
-                <li class="nav-item mb-0">
-                  <b><a class="nav-link bg-light" href="/my_videos">My videos</a></b>
-                </li>
+                <% unless current_user.role.name == 'Administrator' %>
+                  <li class="nav-item mb-0">
+                    <b><a class="nav-link bg-light" href="/my_videos">My videos</a></b>
+                  </li>
+                <% end %>
               <% end %>
               <% if current_user %>
                 <li class="nav-item mb-0">

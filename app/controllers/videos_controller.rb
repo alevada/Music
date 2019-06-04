@@ -32,7 +32,7 @@ class VideosController < ApplicationController
                        # metoda definita aici pt ca requestul se face la controller !
   def import_video
     @video = Video.find_by(id: params[:id])
-    # owner = owner-ul videoului
+        # owner = owner-ul videoului
     owner_user = @video.user
     if ImportedVideo.create(video_id: @video.id, user_id: current_user.id, imported_from_id: owner_user.id)
       redirect_to videos_path, notice: 'Imported successfully'
@@ -45,7 +45,7 @@ class VideosController < ApplicationController
     imported_video = ImportedVideo.find_by(id: params[:id])
     unless imported_video.blank?
       if ImportedVideo.delete(imported_video.id)
-        redirect_to my_videos_path, notice: "Deleted successfully with ID : #{imported_video.id}"
+        redirect_to my_videos_path, notice: "Deleted successfully"
       end
     end
   end
