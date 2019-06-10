@@ -17,7 +17,6 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'devise'
 gem 'github-pages', group: :jekyll_plugins
 
-
 gem 'devise_invitable', '~> 2.0.0'
 gem 'cancancan', '~> 1.10'
 
@@ -63,3 +62,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'rspec-rails'

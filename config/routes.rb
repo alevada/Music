@@ -1,5 +1,6 @@
 
 Rails.application.routes.draw do
+  resources :usrs
   #devise_for :users, controllers: { invitations: 'users_invitations' }
   #imported_videos :link_embed
 

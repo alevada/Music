@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Usrs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Role</th>
+      <th>Is public</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usrs.each do |usr| %>
+      <tr>
+        <td><%= usr.username %></td>
+        <td><%= usr.role_id %></td>
+        <td><%= usr.is_public %></td>
+        <td><%= link_to 'Show', usr %></td>
+        <td><%= link_to 'Edit', edit_usr_path(usr) %></td>
+        <td><%= link_to 'Destroy', usr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Usr', new_usr_path %>

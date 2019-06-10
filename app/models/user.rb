@@ -32,5 +32,4 @@ class User < ApplicationRecord
       self.all
     end
   end
-
 end
