@@ -2,6 +2,10 @@ require_relative '../rails_helper'
 # require_relative '../../app/models/user'
 
 describe User do
+  context 'associations' do
+    it { should have_many(:videos) }
+  end
+
   context 'verifies presence' do
     it 'verifies presence of username' do
       u = User.new
@@ -272,11 +276,9 @@ describe User do
       @u.email = 'a_b@c.d'
       expect(@u.valid?).to eq true
     end
-  end
+  end # end-ul contextului
 
-  it 'expire_all_remember_me_on_sign_out = true' do
-
-  end
 
 
 end
+

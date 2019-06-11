@@ -20,16 +20,16 @@ class User < ApplicationRecord
     update_attributes(deactivated: true) unless deactivated
   end
 
-  def inactive_message
-    !deactivated ? super : :is_locked
-  end
+  # def inactive_message
+  #   !deactivated ? super : :is_locked
+  # end
 
   #search-ul asta nu mai este folosit...in controller-ul de user
-  def self.search(search)
-    if search
-      self.where('username LIKE ?', "%#{search}%")
-    else
-      self.all
-    end
-  end
+  # def self.search(search)
+  #   if search
+  #     self.where('username LIKE ?', "%#{search}%")
+  #   else
+  #     self.all
+  #   end
+  # end
 end
